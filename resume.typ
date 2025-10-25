@@ -98,6 +98,15 @@
   )
 }
 
+#let generic_certifications_1x2(r1c1, r1c2) = {
+  grid(
+    columns: (auto, auto),
+    column-gutter: 1fr,
+    align(left)[#r1c1],
+    align(right)[#r1c2]
+  )
+}
+
 #let generic_2x2(cols, r1c1, r1c2, r2c1, r2c2) = {
   // sanity checks
   assert.eq(type(cols), array)
@@ -164,7 +173,7 @@
   )
   v(-0.2em)
   if body != [] {
-    v(0em)
+    v(-0.2em)
     set par(leading: 0.6em)
     set list(indent: 0.5em)
     body
@@ -184,7 +193,31 @@
   }
   v(-0.2em)
   if body != [] {
-    v(-0.4em)
+    v(-0.2em)
+    set par(leading: 0.6em)
+    set list(indent: 0.5em)
+    body
+  }
+}
+
+#let certification-heading(name, date, stack: (("", "")), body) = {
+  // Combine name and institution on the same line
+  if stack != (("", "")) and stack != () {
+    let (institution, url) = stack
+    generic_certifications_1x2(
+      [*#name* #h(0.3em) | #h(0.3em) #link(url)[#institution]],
+      [*#date.display("[month repr:short] [year]")*]
+    )
+  } else {
+    generic_certifications_1x2(
+      [*#name*],
+      [*#date.display("[month repr:short] [year]")*]
+    )
+  }
+
+  v(-0.2em)
+  if body != [] {
+    v(-0.2em)
     set par(leading: 0.6em)
     set list(indent: 0.5em)
     body
@@ -206,7 +239,7 @@
   )
   v(-0.2em)
   if body != [] {
-    v(-0.4em)
+    v(-0.2em)
     set par(leading: 0.6em)
     set list(indent: 0.5em)
     body

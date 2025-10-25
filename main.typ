@@ -77,27 +77,55 @@
     - Leveraged modern cryptographic protocols to *minimize communication rounds required for transaction signing* on Nano’s network.
     - Created a *desktop application* that uses the custom library to allow groups to perform transactions remotely in an *intuitive and secure graphical environment*.
   ]
-
-  #project-heading(
-    "Dwight Schrute's Gym for Muscles",
-  )[
-    - Designed and equipped a workplace gym, promoting health and wellness for Dunder Mifflin employees
-    - Created a recycling program, offering monetary incentives (5 cents per yard of tin) to encourage sustainable practices
-  ]
-
-  #project-heading(
-    "Sesame Avenue Daycare Center for Infants and Toddlers",
-  )[
-    - Founded an innovative daycare focused on cognitive development and early learning strategies
-    - Developed specialized programs combining physical activities and educational games for children
-  ]
 ]
 
+#custom-title("Certifications")[
+  #certification-heading(
+    "2nd Place in IEEE RetroJam 2025",
+    datetime(year: 2025, month: 10, day: 1),
+    stack: ("IEEE UP Student Branch", "https://ieee.fe.up.pt/")
+  )[
+    - Built a game in 48 hours, *focusing on essential requirements* and *meeting tight deadlines* to finish the project on time.
+    - Linked with like-minded individuals, gaining insights into *different technologies and perspectives* used to reach a common goal.
+  ]
 
-#custom-title("Skills")[
+  #certification-heading(
+    "Participation in Inforum 2025",
+    datetime(year: 2025, month: 9, day: 1),
+    stack: ("Inforum", "https://inforum2025.xdi.uevora.pt/")
+  )[
+    - Presented my Bachelor’s Degree final project to an *audience of researchers*, *professionals*, *and students*, receiving valuable feedback and constructive criticism.
+    - Networked with academic and industry professionals, gaining insights into *current research trends* and career opportunities in the field.
+  ]
+
+  #certification-heading(
+    "Industrial Robotics Fundamentals",
+    datetime(year: 2025, month: 7, day: 1),
+    stack: ("Universidade da Beira Interior", "https://www.ubi.pt/")
+  )[]
+
+  #certification-heading(
+    "Volunteering",
+    datetime(year: 2024, month: 2, day: 1),
+    stack: ("Missão País", "https://www.missaopais.pt/home")
+  )[]
+
+  #certification-heading(
+    "Participation in RoboCup 2016",
+    datetime(year: 2016, month: 6, day: 1),
+    stack: ("RoboCup Federation", "https://2016.robocup.org/web/index-2.html")
+  )[]
+
+  #certification-heading(
+    "1st Place in the National Robotics Championship",
+    datetime(year: 2016, month: 5, day: 1),
+    stack: ("Instituto Politécnico de Bragança", "https://robotica2016.ipb.pt/indexpt.html")
+  )[]
+]
+
+#custom-title("Technical Skills")[
   #skills()[
-    - *Professional Skills:* Sales Expertise, Leadership, Conflict Resolution, Strategic Planning, Negotiation
-    - *Personal Traits:* Hardworking, Alpha Male, Jackhammer, Merciless, Insatiable
-    - *Specialized Talents:* Karate (Black Belt), Jujitsu, Werewolf Hunting, Table Making
+    - *Languages:* Rust, OCaml, C, Java, SQL, Python
+    - *Developer Tools:* Git, Linux, Docker, Postman, OpenMPI
   ]
 ]

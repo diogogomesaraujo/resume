@@ -125,7 +125,7 @@
 
 #custom-title("Technical Skills")[
   #skills()[
-    - *Languages:* Rust, OCaml, C, Java, SQL, Python
-    - *Developer Tools:* Git, Linux, Docker, Postman, OpenMPI
+    - *Programming Languages:* Rust, OCaml, C, Java, SQL, Python
+    - *Frameworks & Tools:* Git, Linux, Docker, Postman, Tokio, POSIX, gRPC, OpenMP/MPI, Dalek, Raylib
   ]
 ]

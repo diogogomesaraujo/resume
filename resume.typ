@@ -16,29 +16,34 @@
   website: "",
   linkedin-user-id: "",
   github-username: "",
-  body
+  body,
 ) = {
   set document(
     title: "Resume | " + author-name,
     author: author-name,
     keywords: "cv",
-    date: none
+    date: none,
   )
 
   set page(
     paper: paper,
     margin: (
-      top: top-margin, bottom: bottom-margin,
-      left: left-margin, right: right-margin
+      top: top-margin,
+      bottom: bottom-margin,
+      left: left-margin,
+      right: right-margin,
     ),
   )
 
   set text(
-    font: font, size: font-size, lang: "en", ligatures: false
+    font: font,
+    size: font-size,
+    lang: "en",
+    ligatures: false,
   )
 
   show heading.where(
-    level: 1
+    level: 1,
   ): it => block(width: 100%)[
     #set text(font-size + 2pt, weight: "regular")
     #smallcaps(it.body)
@@ -58,7 +63,7 @@
   }
 
   align(author-position, [
-    #upper(text(font-size+7pt, weight: "extrabold")[#author-name])
+    #upper(text(font-size + 7pt, weight: "extrabold")[#author-name])
     #v(-1em)
   ])
 
@@ -73,14 +78,16 @@
         contact_item(linkedin-user-id, link-type: "https://linkedin.com/in/", prefix: "linkedin.com/in/"),
         contact_item(github-username, link-type: "https://github.com/", prefix: "github.com/"),
       )
-      items.filter(x => x != none).join([
-        #show "|": sep => {
-          h(sepSpace)
-          [|]
-          h(sepSpace)
-        }
-        |
-      ])
+      items
+        .filter(x => x != none)
+        .join([
+          #show "|": sep => {
+            h(sepSpace)
+            [|]
+            h(sepSpace)
+          }
+          |
+        ])
     }
   ])
 
@@ -93,8 +100,7 @@
 #let generic_1x2(r1c1, r1c2) = {
   grid(
     columns: (1fr, 1fr),
-    align(left)[#r1c1],
-    align(right)[#r1c2]
+    align(left)[#r1c1], align(right)[#r1c2],
   )
 }
 
@@ -102,8 +108,7 @@
   grid(
     columns: (auto, auto),
     column-gutter: 1fr,
-    align(left)[#r1c1],
-    align(right)[#r1c2]
+    align(left)[#r1c1], align(right)[#r1c2],
   )
 }
 
@@ -131,7 +136,7 @@
     set list(
       body-indent: 0.1em,
       indent: 0em,
-      marker: []
+      marker: [],
     )
     body
   }
@@ -148,15 +153,14 @@
   }
 
   return [
-      #start-date.display("[month repr:short] [year]") --
-      #if (
-        (end-date.month() == datetime.today().month()) and
-        (end-date.year() == datetime.today().year())
-      ) [
-        Present
-      ] else [
-        #end-date.display("[month repr:short] [year]")
-      ]
+    #start-date.display("[month repr:short] [year]") --
+    #if (
+      (end-date.month() == datetime.today().month()) and (end-date.year() == datetime.today().year())
+    ) [
+      Present
+    ] else [
+      #end-date.display("[month repr:short] [year]")
+    ]
   ]
 }
 
@@ -168,8 +172,10 @@
 
   generic_2x2(
     (1fr, 1fr),
-    [*#title*], [*#period_worked(start-date, end-date)*],
-    emph([#company]), emph(location)
+    [*#title*],
+    [*#period_worked(start-date, end-date)*],
+    emph([#company]),
+    emph(location),
   )
   v(-0.2em)
   if body != [] {
@@ -187,7 +193,11 @@
   }
   if stack != "" {
     [
-      #show "|": sep => { h(0.3em); [|]; h(0.3em) }
+      #show "|": sep => {
+        h(0.3em)
+        [|]
+        h(0.3em)
+      }
       |#stack
     ]
   }
@@ -200,18 +210,18 @@
   }
 }
 
-#let certification-heading(name, date, stack: (("", "")), body) = {
+#let certification-heading(name, date, stack: ("", ""), body) = {
   // Combine name and institution on the same line
-  if stack != (("", "")) and stack != () {
+  if stack != ("", "") and stack != () {
     let (institution, url) = stack
     generic_certifications_1x2(
       [*#name* #h(0.3em) | #h(0.3em) #link(url)[#institution]],
-      [*#date.display("[month repr:short] [year]")*]
+      [*#date.display("[month repr:short] [year]")*],
     )
   } else {
     generic_certifications_1x2(
       [*#name*],
-      [*#date.display("[month repr:short] [year]")*]
+      [*#date.display("[month repr:short] [year]")*],
     )
   }
 
@@ -225,7 +235,16 @@
 }
 
 // Pretty self-explanatory.
-#let education-heading(degree-type, degree, institution, start-date, end-date, body, degree-url: "", institution-url: "") = {
+#let education-heading(
+  degree-type,
+  degree,
+  institution,
+  start-date,
+  end-date,
+  body,
+  degree-url: "",
+  institution-url: "",
+) = {
   // sanity checks
   assert.eq(type(start-date), datetime)
   assert(type(end-date) == datetime or type(end-date) == str)
@@ -234,8 +253,8 @@
     (70%, 30%),
     [*#degree-type*],
     [*#period_worked(start-date, end-date)*],
-    if degree-url.len() != 0 {link(degree-url, [#emph[#degree]])} else {[#emph[#degree]]},
-    if institution-url.len() != 0 {link(institution-url, [#emph[#institution]])} else {[#emph[#institution]]},
+    if degree-url.len() != 0 { link(degree-url, [#emph[#degree]]) } else { [#emph[#degree]] },
+    if institution-url.len() != 0 { link(institution-url, [#emph[#institution]]) } else { [#emph[#institution]] },
   )
   v(-0.2em)
   if body != [] {

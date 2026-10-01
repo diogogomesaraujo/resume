@@ -6,6 +6,7 @@
 #let github = "diogogomesaraujo"
 #let linkedin = "diogogomesaraujo"
 #let personal-site = "diogoaraujo.com"
+#let based = "Porto, Portugal"
 
 #show: resume.with(
   top-margin: 0.45in,
@@ -29,7 +30,9 @@
     "Present",
     degree-url: "https://sigarra.up.pt/fcup/pt/cur_geral.cur_view?pv_ano_lectivo=2021&pv_curso_id=876&pv_origem=CAND",
     institution-url: "https://www.up.pt/fcup/en/",
-  )[]
+  )[
+    Focused on Distributed Systems, Programming Languages and Formal Verification.
+  ]
   #education-heading(
     "Bachelor's",
     "Computer Science and Engineering",
@@ -38,7 +41,47 @@
     datetime(year: 2025, month: 7, day: 11),
     degree-url: "https://www.ubi.pt/curso/42",
     institution-url: "https://www.ubi.pt/",
-  )[]
+  )[
+    Final project presented at Inforum 2025 in Évora.
+  ]
+]
+
+#custom-title("Research and Projects")[
+  #project-heading(
+    "From Ideal Clocks to Buildable Ones",
+    project-url: "",
+    stack: "Applied Cryptography, Model Checking, Blockchain Protocols",
+  )[
+    - Currently starting research into using *model checking* techniques to compare realistic clock constructions with ideal ones used in blockchain bridges specified in the Universal Composability (UC) framework in collaboration with Input Output Global.
+  ]
+  #project-heading(
+    "Threshold Signature Library and Wallet for Nano",
+    project-url: "https://github.com/diogogomesaraujo/aokiji",
+    stack: "Rust, Dalek (Ed25519), Tokio, Dioxus (WASM)",
+  )[
+    - Implemented a library for *FROST threshold signing* on Nano, which is not natively supported by the protocol.
+    - Built a desktop application for creating shared accounts and co-signing transactions remotely, hiding the peer-to-peer signing protocol behind a simple GUI.
+  ]
+  #project-heading(
+    "PoW Blockchain from Decentralized Auctions",
+    project-url: "https://github.com/diogogomesaraujo/blocktion",
+    stack: "Rust, LibP2P, Dalek (Ed25519), Tokio, Docker, Ratatui (CLI)",
+  )[
+    - Built a network overlay for peer discovery on top of *Kademlia* (Ethereum's network protocol).
+    - Designed a *Proof-of-Work blockchain* using BLAKE2b hashing, Ed25519 signatures, Merkle trees and Longest Chain Consensus.
+    - Created an auction client that uses the chain as a public ledger for recording and verifying bids.
+    - Simulated bootstrap, honest and malicious nodes in Docker to study adversarial behaviour.
+  ]
+
+  // #project-heading(
+  // "Purr Functional Programming Language",
+  // project-url: "https://github.com/diogogomesaraujo/purr",
+  // stack: "Haskell, Yacc, Lex, Type Inference, Lazy Evaluation",
+  // )[
+  // - Built a *lazy functional programming language* with ML-like syntax, including lexer, parser, compiler and interpreter.
+  // - Implemented *Hindley-Damas-Milner type inference* with polymorphic functions and compile-time type checking.
+  // - Implemented *lazy evaluation* based on graph-reduction techniques and developed a standard library of higher-order functions.
+  // ]
 ]
 
 #custom-title("Work Experience")[
@@ -49,8 +92,8 @@
     datetime(year: 2026, month: 1, day: 1),
     datetime(year: 2026, month: 4, day: 17),
   )[
-    - Developed and maintained *IoT gateway microservices* for Distributed Energy Resources communication.
-    - Deployed a *Zero Trust framework* (Teleport) for *secure remote access to all IoT devices* in the Power and Energy Systems laboratory.
+    - Maintained *IoT gateway microservices* for communication with Distributed Energy Resources (DER).
+    - Deployed a *Zero Trust* setup (Teleport) giving secure remote access to every IoT device in the Power and Energy Systems lab.
   ]
 
   #work-heading(
@@ -60,31 +103,9 @@
     datetime(year: 2024, month: 5, day: 1),
     datetime(year: 2025, month: 8, day: 1),
   )[
-    - Developed and maintained *backend REST API's* for mobile and web applications.
-    - Assisted in recruiting by *screening candidates*, *directed teams* and *worked with clients* to deliver projects on time and according to the requirements.
-  ]
-]
-
-
-#custom-title("Projects")[
-  #project-heading(
-    "Group Wallet for Nano",
-    project-url: "https://github.com/diogogomesaraujo/aokiji",
-    stack: "Rust, Tokio, Dioxus, Dalek",
-  )[
-    - Developed an *open-source library* with a custom implementation of FROST, *enabling shared account creation* and *group transactions* on Nano’s blockchain.
-    - Leveraged modern cryptographic protocols to *minimize communication rounds required for transaction signing* on Nano’s network.
-    - Created a *desktop application* that uses the custom library to allow groups to perform transactions remotely in an *intuitive and secure graphical environment*.
-  ]
-  #project-heading(
-    "PoW Blockchain from Decentralized Auctions",
-    project-url: "https://github.com/diogogomesaraujo/blocktion",
-    stack: "Rust, Tokio, LibP2P, Dalek, Docker",
-  )[
-    - Developed a DHT overlay based on Kademlia for *decentralized network construction*.
-    - PoW Blockchain with *Blake2b hashing*, *Ed25519 signatures*, and *Merkle Trees* for transaction validation.
-    - *Client for auctions* using the blockchain layer as a public ledger.
-    - Docker *autonomous network behaviour simulation* with clients, bootstrap nodes, well behaved nodes, and malicious nodes.
+    - Developed *backend REST APIs* for mobile and web applications.
+    - Led project teams and worked directly with clients to deliver on requirements and on time.
+    - Screened candidates during recruitment.
   ]
 ]
 
@@ -94,7 +115,7 @@
     datetime(year: 2025, month: 10, day: 1),
     stack: ("IEEE UP Student Branch", "https://ieee.fe.up.pt/"),
   )[
-    - Built a game in 48 hours from scratch, using Rust and Raylib, learning how to *reduce a problem to its core requirements*.
+    Built a complete game in 48 hours with Rust and Raylib, including game mechanics, rendering and input handling.
   ]
 
   #certification-heading(
@@ -102,7 +123,7 @@
     datetime(year: 2025, month: 9, day: 1),
     stack: ("Inforum", "https://inforum2025.xdi.uevora.pt/"),
   )[
-    - Presented my Bachelor’s Degree final project to an *audience of researchers*, *professionals*, *and students*, receiving valuable feedback and constructive criticism on my work.
+    Presented my Bachelor's final project to researchers, professionals and students.
   ]
 
   #certification-heading(
@@ -132,7 +153,11 @@
 
 #custom-title("Technical Skills")[
   #skills()[
-    - *Programming Languages:* Rust, OCaml, C, Haskell, Java, SQL
-    - *Frameworks & Tools:* Git, UNIX, Tokio, POSIX, STM, OpenMP, gRPC, QuickCheck, QUIC, LibP2P, Dalek, Raylib, PostgreSQL
+    - *Languages:* Rust, OCaml, Haskell, C, Java, SQL
+    - *Distributed Systems & Networking:* libp2p, QUIC, gRPC
+    - *Systems & Concurrency:* UNIX, POSIX, OpenMP, STM, Tokio
+    - *Tools & Infrastructure:* Git, Docker, Teleport, PostgreSQL, Raylib
+    - *Formal Methods & Testing:* Quint, Rocq, QuickCheck
+    - *Spoken Languages:* Portuguese (Native), English (B2 First, Cambridge)
   ]
 ]

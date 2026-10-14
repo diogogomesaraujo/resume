@@ -46,7 +46,7 @@
   ]
 ]
 
-#custom-title("Research and Projects")[
+#custom-title("Research & Projects")[
   #project-heading(
     "From Ideal Clocks to Buildable Ones",
     project-url: "",
@@ -158,6 +158,7 @@
     - *Systems & Concurrency:* UNIX, POSIX, OpenMP, STM, Tokio
     - *Tools & Infrastructure:* Git, Docker, Teleport, PostgreSQL, Raylib
     - *Formal Methods & Testing:* Quint, Rocq, QuickCheck
+    - *Web:* HTML5, CSS, Dioxus, Actix Web, Bonsai, Dream
     - *Spoken Languages:* Portuguese (Native), English (B2 First, Cambridge)
   ]
 ]

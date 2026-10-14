@@ -72,16 +72,6 @@
     - Created an auction client that uses the chain as a public ledger for recording and verifying bids.
     - Simulated bootstrap, honest and malicious nodes in Docker to study adversarial behaviour.
   ]
-
-  // #project-heading(
-  // "Purr Functional Programming Language",
-  // project-url: "https://github.com/diogogomesaraujo/purr",
-  // stack: "Haskell, Yacc, Lex, Type Inference, Lazy Evaluation",
-  // )[
-  // - Built a *lazy functional programming language* with ML-like syntax, including lexer, parser, compiler and interpreter.
-  // - Implemented *Hindley-Damas-Milner type inference* with polymorphic functions and compile-time type checking.
-  // - Implemented *lazy evaluation* based on graph-reduction techniques and developed a standard library of higher-order functions.
-  // ]
 ]
 
 #custom-title("Work Experience")[
